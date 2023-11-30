@@ -82,7 +82,7 @@ catalog:
 
     # The backstage demo deployment (this)
     - type: url
-      target: https://github.com/backstage/demo/blob/master/catalog-info.yaml
+      target: https://github.com/roadie-demo/*/blob/-/catalog-info.yaml
 
     # The backstage library repository
     - type: url
