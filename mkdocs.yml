@@ -1,0 +1,8 @@
+site_name: 'backstage-demo'
+
+plugins:
+  - techdocs-core
+
+# Uncomment to add extensions if desired
+#markdown_extensions:
+#  - markdown_inline_mermaid
