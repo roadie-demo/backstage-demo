@@ -4,7 +4,7 @@ metadata:
   name: backstage-demo
   description: An example deployment of a Backstage application.
   annotations:
-    github.com/project-slug: backstage/demo
+    github.com/project-slug: roadie-demo/backstage-demo
 spec:
   type: website
   owner: backstage/maintainers
