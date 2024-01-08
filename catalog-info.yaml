@@ -2,6 +2,9 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: backstage-demo
+  title: Backstage Demo
+  tags:
+    - demo
   description: An example deployment of a Backstage application.
   annotations:
     github.com/project-slug: roadie-demo/backstage-demo
