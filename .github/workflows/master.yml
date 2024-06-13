@@ -81,3 +81,7 @@ jobs:
           CURRENT_VERSION: ${{ steps.check_if_release.outputs.current_version }}
         with:
           args: 'The Backstage Demo site has been upgraded to release {{CURRENT_VERSION}} go check it out: https://demo.backstage.io'  
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
