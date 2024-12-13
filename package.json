@@ -9,7 +9,7 @@
     "dev": "concurrently \"yarn start\" \"yarn start-backend\"",
     "start": "yarn workspace app start",
     "start-backend": "yarn workspace backend start",
-    "build": "backstage-cli repo build --all",
+    "build": "backstage-cli repo build --all && yarn sentry:sourcemaps",
     "tsc": "tsc",
     "tsc:full": "tsc --skipLibCheck false --incremental false",
     "clean": "backstage-cli repo clean",
@@ -20,7 +20,8 @@
     "lint:all": "backstage-cli repo lint",
     "create-plugin": "backstage-cli create-plugin --scope internal --no-private",
     "remove-plugin": "backstage-cli remove-plugin",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org roadie-demo --project backstage-demo ./packages/app/dist && sentry-cli sourcemaps upload --org roadie-demo --project backstage-demo ./packages/app/dist"
   },
   "workspaces": {
     "packages": [
@@ -64,5 +65,9 @@
       "@asyncapi/react-component"
     ]
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.0",
+  "dependencies": {
+    "@sentry/cli": "^2.39.1",
+    "@sentry/react": "^8.45.0"
+  }
 }

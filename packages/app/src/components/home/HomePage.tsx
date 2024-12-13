@@ -12,6 +12,20 @@ import { SearchContextProvider } from '@backstage/plugin-search-react';
 import { Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
 import { tools, useLogoStyles } from './shared';
+import * as Sentry from "@sentry/react";
+
+Sentry.init({
+  dsn: "https://313fd8343a4948630cc175655ccff227@o4508461602439168.ingest.de.sentry.io/4508461853311056",
+  integrations: [],
+
+  tracesSampleRate: 1.0,
+});
+
+Sentry.setTag("myTag", "tag-value");
+Sentry.setExtra("myExtra", "extra-value");
+Sentry.addBreadcrumb({ message: "test" });
+
+Sentry.captureMessage("Hello from Backstage Demo, Sentry!");
 
 const useStyles = makeStyles(theme => ({
   searchBarInput: {
